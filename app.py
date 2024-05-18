@@ -22,7 +22,7 @@ def generate_wordcloud(text):
     return wordcloud
 
 def main():
-    st.title("Collaborative Word Cloud Generator")
+    st.title("Word Cloud Generator")
 
     st.header("Input Text")
     user_input = st.text_area("Enter the text for the word cloud")
