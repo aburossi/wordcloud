@@ -3,10 +3,11 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+import json
 
-# Google Sheets setup
-scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-credentials = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope)
+# Load credentials from Streamlit secrets
+credentials_dict = st.secrets["google_credentials"]
+credentials = ServiceAccountCredentials.from_json_keyfile_dict(credentials_dict, ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"])
 client = gspread.authorize(credentials)
 spreadsheet = client.open("WordCloudInputs")  # Replace with your spreadsheet name
 worksheet = spreadsheet.sheet1
@@ -39,7 +40,7 @@ def main():
         combined_text = " ".join(all_inputs)
         if combined_text.strip():
             wordcloud = generate_wordcloud(combined_text)
-            
+
             st.header("Word Cloud")
             fig, ax = plt.subplots()
             ax.imshow(wordcloud, interpolation='bilinear')
