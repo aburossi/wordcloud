@@ -23,7 +23,8 @@ This Streamlit app allows students to collaboratively create word clouds by subm
    cd wordcloud
 2. Install Dependencies:
 
-pip install -r requirements.txt
+   ```sh
+   pip install -r requirements.txt
 
 3. Google Cloud Credentials:
 
@@ -36,17 +37,18 @@ pip install -r requirements.txt
 - Navigate to the "Secrets" section.
 - Add your Google Cloud credentials in the following format:
 
-[google_credentials]
-type = "service_account"
-project_id = "your-project-id"
-private_key_id = "some-private-key-id"
-private_key = "-----BEGIN PRIVATE KEY-----\nYOUR-PRIVATE-KEY\n-----END PRIVATE KEY-----\n"
-client_email = "your-service-account@your-project-id.iam.gserviceaccount.com"
-client_id = "some-client-id"
-auth_uri = "https://accounts.google.com/o/oauth2/auth"
-token_uri = "https://oauth2.googleapis.com/token"
-auth_provider_x509_cert_url = "https://www.googleapis.com/oauth2/v1/certs"
-client_x509_cert_url = "https://www.googleapis.com/robot/v1/metadata/x509/your-service-account%40your-project-id.iam.gserviceaccount.com"
+   ```sh
+   [google_credentials]
+   type = "service_account"
+   project_id = "your-project-id"
+   private_key_id = "some-private-key-id"
+   private_key = "-----BEGIN PRIVATE KEY-----\nYOUR-PRIVATE-KEY\n-----END PRIVATE KEY-----\n"
+   client_email = "your-service-account@your-project-id.iam.gserviceaccount.com"
+   client_id = "some-client-id"
+   auth_uri = "https://accounts.google.com/o/oauth2/auth"
+   token_uri = "https://oauth2.googleapis.com/token"
+   auth_provider_x509_cert_url = "https://www.googleapis.com/oauth2/v1/certs"
+   client_x509_cert_url = "https://www.googleapis.com/robot/v1/metadata/x509/your-service-account%40your-project-id.iam.gserviceaccount.com"
 
 5. Deploy the App:
 
@@ -55,8 +57,8 @@ Push your repository to GitHub.
 
 ### Usage Instructions
 1. Run the App Locally:
-
-streamlit run app.py
+   ```sh
+   streamlit run app.py
 
 2. Submit Text:
 
