@@ -6,7 +6,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 import json
 
 # Load credentials from Streamlit secrets
-credentials_dict = st.secrets["google_credentials"]
+credentials_dict = json.loads(st.secrets["google_credentials"])
 credentials = ServiceAccountCredentials.from_json_keyfile_dict(credentials_dict, ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"])
 client = gspread.authorize(credentials)
 spreadsheet = client.open("WordCloudInputs")  # Replace with your spreadsheet name
