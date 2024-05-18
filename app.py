@@ -48,14 +48,6 @@ def main():
         else:
             st.error("No text available to generate word cloud")
 
-    if st.button("Clear All Inputs"):
-        worksheet.clear()
-        st.success("All inputs cleared!")
-
-    all_inputs = get_all_inputs()
-    if all_inputs:
-        st.header("All User Inputs")
-        st.write(all_inputs)
 
 if __name__ == "__main__":
     main()
