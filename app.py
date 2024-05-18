@@ -58,3 +58,4 @@ def main():
         st.write(all_inputs)
 
 if __name__ == "__main__":
+    main()
